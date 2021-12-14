@@ -1,0 +1,58 @@
+﻿@model IEnumerable<Project2.Database.Movie>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.FavDirectorName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FavMovieName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FavFranchiseName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.User)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FavDirectorName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FavMovieName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FavFranchiseName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.User.Email)
+            </td>
+            <td>
+
+                <a asp-action="Edit" asp-route-id="@item.FavDirectorId">Edit</a>
+                |
+                @if (User.IsInRole("Managers"))
+                {
+                    <a asp-action="Details" asp-route-id="@item.FavDirectorId">Details |</a>
+                }
+                <a asp-action="Delete" asp-route-id="@item.FavDirectorId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

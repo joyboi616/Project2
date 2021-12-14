@@ -1,0 +1,51 @@
+﻿@model Project2.Database.Music
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Music</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.FavArtistName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.FavArtistName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.FavSongName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.FavSongName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.FavAlbumName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.FavAlbumName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.FavMusicVideoName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.FavMusicVideoName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.User)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.User.Email)
+        </dd class>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="FavArtistId" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>

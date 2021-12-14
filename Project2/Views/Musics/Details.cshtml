@@ -1,0 +1,48 @@
+﻿@model Project2.Database.Music
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Music</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.FavArtistName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.FavArtistName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.FavSongName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.FavSongName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.FavAlbumName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.FavAlbumName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.FavMusicVideoName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.FavMusicVideoName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.User)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.User.Email)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.FavArtistId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

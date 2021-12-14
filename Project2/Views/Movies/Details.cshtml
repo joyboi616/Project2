@@ -1,0 +1,42 @@
+﻿@model Project2.Database.Movie
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Movie</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.FavDirectorName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.FavDirectorName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.FavMovieName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.FavMovieName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.FavFranchiseName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.FavFranchiseName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.User)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.User.Email)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.FavDirectorId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
