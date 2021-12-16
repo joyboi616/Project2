@@ -25,7 +25,7 @@ namespace Project2.Controllers
             return View(await applicationDbContext.ToListAsync());
         }
 
-        // GET: Series/Details/5
+        // GET: Series/Details/
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -52,8 +52,6 @@ namespace Project2.Controllers
         }
 
         // POST: Series/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("FavShowrunnerId,FavShowrunnerName,FavEpisodeName,FavShowName,FavEsceneName,UserId")] Series series)
@@ -68,7 +66,7 @@ namespace Project2.Controllers
             return View(series);
         }
 
-        // GET: Series/Edit/5
+        // GET: Series/Edit/
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -85,9 +83,7 @@ namespace Project2.Controllers
             return View(series);
         }
 
-        // POST: Series/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        // POST: Series/Edit/
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("FavShowrunnerId,FavShowrunnerName,FavEpisodeName,FavShowName,FavEsceneName,UserId")] Series series)
@@ -121,7 +117,7 @@ namespace Project2.Controllers
             return View(series);
         }
 
-        // GET: Series/Delete/5
+        // GET: Series/Delete/
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -140,7 +136,7 @@ namespace Project2.Controllers
             return View(series);
         }
 
-        // POST: Series/Delete/5
+        // POST: Series/Delete/
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)

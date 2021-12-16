@@ -26,7 +26,7 @@ namespace Project2.Controllers
             return View(await _context.AspNetRoles.ToListAsync());
         }
 
-        // GET: AspNetRoles/Details/5
+        // GET: AspNetRoles/Details/
         public async Task<IActionResult> Details(string id)
         {
             if (id == null)
@@ -51,11 +51,9 @@ namespace Project2.Controllers
         }
 
         // POST: AspNetRoles/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Name,NormalizedName,ConcurrencyStamp")] AspNetRole aspNetRole)
+        public async Task<IActionResult> Create([Bind("Id,Name,SuperRoleName")] AspNetRole aspNetRole)
         {
             if (ModelState.IsValid)
             {
@@ -66,7 +64,7 @@ namespace Project2.Controllers
             return View(aspNetRole);
         }
 
-        // GET: AspNetRoles/Edit/5
+        // GET: AspNetRoles/Edit/
         public async Task<IActionResult> Edit(string id)
         {
             if (id == null)
@@ -82,12 +80,10 @@ namespace Project2.Controllers
             return View(aspNetRole);
         }
 
-        // POST: AspNetRoles/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        // POST: AspNetRoles/Edit/
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(string id, [Bind("Id,Name,NormalizedName,ConcurrencyStamp")] AspNetRole aspNetRole)
+        public async Task<IActionResult> Edit(string id, [Bind("Id,Name,SuperRoleName")] AspNetRole aspNetRole)
         {
             if (id != aspNetRole.Id)
             {
@@ -117,7 +113,7 @@ namespace Project2.Controllers
             return View(aspNetRole);
         }
 
-        // GET: AspNetRoles/Delete/5
+        // GET: AspNetRoles/Delete/
         public async Task<IActionResult> Delete(string id)
         {
             if (id == null)
@@ -135,7 +131,7 @@ namespace Project2.Controllers
             return View(aspNetRole);
         }
 
-        // POST: AspNetRoles/Delete/5
+        // POST: AspNetRoles/Delete/
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(string id)

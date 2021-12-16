@@ -43,7 +43,7 @@
                 @Html.DisplayFor(modelItem => item.PhoneNumber)
             </td>
             <td>
-                @if (User.IsInRole("Managers"))
+                @if (User.IsInRole("SuperAdmin"))
                 {
                     <a asp-action="Edit" asp-route-id="@item.UserId">Edit</a>
                 }

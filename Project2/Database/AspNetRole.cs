@@ -21,8 +21,7 @@ namespace Project2.Database
         [StringLength(256)]
         public string Name { get; set; }
         [StringLength(256)]
-        public string NormalizedName { get; set; }
-        public string ConcurrencyStamp { get; set; }
+        public string SuperRoleName { get; set; }
 
         [InverseProperty(nameof(AspNetRoleClaim.Role))]
         public virtual ICollection<AspNetRoleClaim> AspNetRoleClaims { get; set; }

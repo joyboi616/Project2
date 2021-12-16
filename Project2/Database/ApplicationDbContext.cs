@@ -46,9 +46,9 @@ namespace Project2.Database
 
             modelBuilder.Entity<AspNetRole>(entity =>
             {
-                entity.HasIndex(e => e.NormalizedName, "RoleNameIndex")
+                entity.HasIndex(e => e.SuperRoleName, "RoleNameIndex")
                     .IsUnique()
-                    .HasFilter("([NormalizedName] IS NOT NULL)");
+                    .HasFilter("([SuperRoleName] IS NOT NULL)");
             });
 
             modelBuilder.Entity<AspNetUser>(entity =>

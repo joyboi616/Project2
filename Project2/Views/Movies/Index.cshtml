@@ -40,13 +40,13 @@
                 @Html.DisplayFor(modelItem => item.FavFranchiseName)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.User.Email)
+                @Html.DisplayFor(modelItem => item.User.UserId)
             </td>
             <td>
 
                 <a asp-action="Edit" asp-route-id="@item.FavDirectorId">Edit</a>
                 |
-                @if (User.IsInRole("Managers"))
+                @if (User.IsInRole("SuperAdmin"))
                 {
                     <a asp-action="Details" asp-route-id="@item.FavDirectorId">Details |</a>
                 }
